@@ -27,6 +27,7 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -55,10 +56,10 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 40.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Cambria", 39.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(161, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(190, 63)
+        Me.Label1.Size = New System.Drawing.Size(177, 62)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Label1"
         '
@@ -67,7 +68,7 @@ Partial Class Form1
         Me.Label2.AutoSize = True
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label2.Font = New System.Drawing.Font("Algerian", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(161, 63)
+        Me.Label2.Location = New System.Drawing.Point(161, 62)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(228, 59)
         Me.Label2.TabIndex = 3
@@ -78,17 +79,29 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label3.Font = New System.Drawing.Font("Inter", 39.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(161, 122)
+        Me.Label3.Location = New System.Drawing.Point(161, 121)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(201, 76)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Label3"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label4.Font = New System.Drawing.Font("Javanese Text", 39.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(161, 197)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(211, 120)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "Label4"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -106,4 +119,5 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class
