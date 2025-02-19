@@ -47,7 +47,7 @@ Public Class Form1
         Dim nativeHandle As IntPtr = CType(element.Current.NativeWindowHandle, IntPtr)
         Dim processId As Integer = element.Current.ProcessId
 
-        ' Check if the process belongs to this application else THREAD ERRORS AND WEIRD SHIT?
+        ' Check if the process BELONGS TO APPLICATION else THREAD ERRORS AND WEIRD SHIT?
         If processId = Process.GetCurrentProcess().Id Then
             Dim newForm As Form = Nothing
 
