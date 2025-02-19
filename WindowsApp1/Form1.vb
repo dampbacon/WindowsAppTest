@@ -12,6 +12,7 @@ Public Class Form1
 
     Private Shared fonts As New PrivateFontCollection()
     Private Shared embeddedInterFont As Font
+    Private Shared ultraThinInter As Font
     Private Shared formsWithEmbeddedFontApplied As New HashSet(Of Form)()
 
     Public Sub New()
@@ -25,9 +26,22 @@ Public Class Form1
         fonts.AddMemoryFont(fontPtr, fontData.Length)
         AddFontMemResourceEx(fontPtr, CUInt(fontData.Length), IntPtr.Zero, dummy)
 
+
+        ' IMPORTANT NOTE YOU CANNOT USE THESE FONT FAMILIES UNLESS YOU INSTALL EACH ONE INDIVIDUALLY BECAUSE OF .NET LIMITATIONS
+        ' PRIVATE FONT COLLECTION
+        If fonts.Families.Length > 0 Then
+            ' Iterate through font families and list the names to find "Inter UltraThin"
+            For Each fontFamily As FontFamily In fonts.Families
+                MessageBox.Show(fontFamily.Name)  ' Show each font family name
+            Next
+        End If
+
+
         Marshal.FreeCoTaskMem(fontPtr)
 
         embeddedInterFont = New Font(fonts.Families(0), 16)
+
+        ultraThinInter = New Font("Inter ExtraLight", 16, FontStyle.Bold)
 
         Automation.AddAutomationEventHandler( 'Split off the automation fucntion from stack overflow code into it's own thing
             WindowPattern.WindowOpenedEvent,
