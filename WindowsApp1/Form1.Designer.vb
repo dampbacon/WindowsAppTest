@@ -66,10 +66,10 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label2.Font = New System.Drawing.Font("Miriam Mono CLM", 39.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Algerian", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(161, 63)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(217, 60)
+        Me.Label2.Size = New System.Drawing.Size(228, 59)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Label2"
         '
@@ -78,7 +78,7 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label3.Font = New System.Drawing.Font("Inter", 39.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(161, 123)
+        Me.Label3.Location = New System.Drawing.Point(161, 122)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(201, 76)
         Me.Label3.TabIndex = 4

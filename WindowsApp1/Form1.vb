@@ -93,10 +93,10 @@ Public Class Form1
     End Sub
 
     Private Sub ApplyFontToControls(parent As Control)
-        parent.Font = New Font(fonts.Families(0), parent.Font.Size)
+        parent.Font = New Font(fonts.Families(0), parent.Font.Size, parent.Font.Style)
 
         For Each child As Control In parent.Controls
-            child.Font = New Font(fonts.Families(0), child.Font.Size)
+            child.Font = New Font(fonts.Families(0), child.Font.Size, child.Font.Style)
 
             If child.Controls.Count > 0 Then
                 ApplyFontToControls(child)
