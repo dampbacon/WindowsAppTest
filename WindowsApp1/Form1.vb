@@ -38,7 +38,9 @@ Public Class Form1
     End Sub
 
     'https://stackoverflow.com/questions/51491566/add-an-event-to-all-forms-in-a-project
-    Private Sub OnWindowOpened(UIElm As AutomationElement, e As AutomationEventArgs)
+    Private Sub OnWindowOpened(UIElm As AutomationElement, e As AutomationEventArgs) 'E is needed even though it's unused to match AutomationEventHandler SIGNATURE
+        ' WindowOpenedEvent ASSUME IT IS A WINDOW
+
         Dim element As AutomationElement = TryCast(UIElm, AutomationElement)
         If element Is Nothing Then Return
 
@@ -50,24 +52,44 @@ Public Class Form1
             Dim newForm As Form = Nothing
 
             If Me.InvokeRequired Then
-                Me.Invoke(New Action(Sub()
-                                         newForm = Application.OpenForms.Cast(Of Form)().FirstOrDefault(Function(f) f.Handle = nativeHandle)
+                Me.Invoke(New Action(Sub() ' CHECK IF ON UI THREAD AND IF NOT INVOKE IT BLAH BLAH
+                                         newForm = Application _
+                                         .OpenForms _ 'Form Collection
+                                         .Cast(Of Form)() _ ' CAST TO IENUMRABABLE
+                                         .FirstOrDefault(Function(f) f.Handle = nativeHandle) 'EQUALITY CHECK THANKS VB
+
                                      End Sub))
-            Else
+            Else 'ALREADY ON UI THREAD
                 newForm = Application.OpenForms.Cast(Of Form)().FirstOrDefault(Function(f) f.Handle = nativeHandle)
+
             End If
 
             If newForm IsNot Nothing AndAlso Not formsWithEmbeddedFontApplied.Contains(newForm) Then
                 If newForm.InvokeRequired Then
                     newForm.Invoke(New Action(Sub()
-                                                  ApplyFontToControls(newForm)
+                                                  ApplyFontAndShowForm(newForm)
                                               End Sub))
                 Else
-                    ApplyFontToControls(newForm)
+                    ApplyFontAndShowForm(newForm)
                 End If
                 formsWithEmbeddedFontApplied.Add(newForm)
+
+                AddHandler newForm.FormClosed, AddressOf OnFormClosedRemoveFromFontAppliedList
             End If
         End If
+    End Sub
+
+    Private Sub OnFormClosedRemoveFromFontAppliedList(sender As Object, e As FormClosedEventArgs)
+        Dim closedForm As Form = TryCast(sender, Form)
+        If closedForm IsNot Nothing Then
+            formsWithEmbeddedFontApplied.Remove(closedForm)
+        End If
+    End Sub
+
+    Private Sub ApplyFontAndShowForm(newForm As Form)
+        newForm.Hide()
+        ApplyFontToControls(newForm)
+        newForm.Show()
     End Sub
 
     Private Sub ApplyFontToControls(parent As Control)
@@ -82,10 +104,7 @@ Public Class Form1
         Next
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim newForm As New Form()
-        newForm.Text = "Random Form"
-        newForm.Show()
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click 'TESTER NETHOD
 
         Dim newForm2 As New Form2()
         newForm2.Show()
