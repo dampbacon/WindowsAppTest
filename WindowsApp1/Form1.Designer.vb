@@ -30,20 +30,22 @@ Partial Class Form1
         '
         'TextBox1
         '
+        Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.TextBox1.Font = New System.Drawing.Font("Matura MT Script Capitals", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(411, 260)
+        Me.TextBox1.Location = New System.Drawing.Point(0, 407)
         Me.TextBox1.MinimumSize = New System.Drawing.Size(4, 4)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(305, 43)
+        Me.TextBox1.Size = New System.Drawing.Size(800, 43)
         Me.TextBox1.TabIndex = 0
         Me.TextBox1.Text = "Some words"
         '
         'Button1
         '
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Button1.Font = New System.Drawing.Font("Monotype Corsiva", 20.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(342, 135)
+        Me.Button1.Location = New System.Drawing.Point(0, 0)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(161, 87)
+        Me.Button1.Size = New System.Drawing.Size(161, 407)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
@@ -51,8 +53,9 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 40.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(589, 138)
+        Me.Label1.Location = New System.Drawing.Point(161, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(190, 63)
         Me.Label1.TabIndex = 2
@@ -61,8 +64,9 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label2.Font = New System.Drawing.Font("Miriam Mono CLM", 39.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.Label2.Location = New System.Drawing.Point(588, 70)
+        Me.Label2.Location = New System.Drawing.Point(161, 63)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(217, 60)
         Me.Label2.TabIndex = 3
