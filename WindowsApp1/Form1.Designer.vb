@@ -27,10 +27,11 @@ Partial Class Form1
         '
         'TextBox1
         '
+        Me.TextBox1.Font = New System.Drawing.Font("Matura MT Script Capitals", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.Location = New System.Drawing.Point(411, 260)
-        Me.TextBox1.MinimumSize = New System.Drawing.Size(3, 3)
+        Me.TextBox1.MinimumSize = New System.Drawing.Size(4, 4)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(305, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(305, 43)
         Me.TextBox1.TabIndex = 0
         Me.TextBox1.Text = "Some words"
         '
